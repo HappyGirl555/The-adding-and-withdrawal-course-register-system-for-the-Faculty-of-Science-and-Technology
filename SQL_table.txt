@@ -1,0 +1,61 @@
+create table student(
+	studentid varchar(10) not null,
+	username varchar(255) not null,
+	password varchar(255) not null,
+	prefix varchar(255) not null,
+	firstname varchar(255) not null,
+	lastname varchar(255) not null,
+	department varchar(255) not null,
+	primary key(studentid)
+);
+
+create table request(
+	reqid varchar(7) not null,
+	studentid varchar(10) not null,
+	prefix varchar(255) not null,
+	firstname varchar(255) not null,
+	lastname varchar(255) not null,
+	year varchar(10) not null,
+	department varchar(255) not null,
+	advisor varchar(255) not null,
+	address_number varchar(255) not null,
+	moo varchar(255) not null,
+	tumbol varchar(255) not null,
+	amphur varchar(255) not null,
+	province varchar(255) not null,
+	postalcode varchar(5) not null,
+	mobile_phone varchar(10) not null,
+	phone varchar(10) null,
+	date date not null,
+	time time not null,
+	foreign key(studentid) REFERENCES student(studentid) ,
+	primary key(reqid)
+);
+
+create table add_subject_lists(
+		reqid varchar(255),
+		subject_code varchar(255) not null,
+		subject_name varchar(255) not null,
+		subject_sec varchar(6) not null,
+		subject_date varchar(255) not null,
+		subject_credit varchar(255) not null,
+		subject_teacher varchar(255) not null,
+		subject_cause varchar(255) not null,
+		subject_teacher_Check boolean not null,
+		foreign key(reqid) REFERENCES request(reqid) ,
+		primary key(reqid,subject_code)
+);
+
+create table drop_subject_lists(
+		reqid varchar(255),
+		subject_code varchar(255) not null,
+		subject_name varchar(255) not null,
+		subject_sec varchar(6) not null,
+		subject_date varchar(255) not null,
+		subject_credit varchar(255) not null,
+		subject_teacher varchar(255) not null,
+		subject_cause varchar(255) not null,
+		subject_teacher_Check boolean not null,
+		foreign key(reqid) REFERENCES request(reqid) ,
+		primary key(reqid,subject_code)
+);

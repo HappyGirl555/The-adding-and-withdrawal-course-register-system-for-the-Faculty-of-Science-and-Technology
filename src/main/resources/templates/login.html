@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="/css/login_styles.css">
+    <script type="module" src="/script/login_script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+    <title>เข้าสู่ระบบ</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="loginForm" class="form-login" action="/login" method="post">
+            <div class ="box1">
+                <div class="pic-logo">
+                    <img src="/picture/logo-sci.png" class="logo">
+                    <img src="/picture/logo.png" class="logo">
+                </div>
+                <h3>ลงทะเบียนเพิ่ม-ถอนรายวิชา</h3>
+                <h3>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์</h3>
+            </div>
+            <div class ="box2">
+                <div class="header-login">
+                    <h3>เข้าสู่ระบบ</h3>
+                </div>
+                <div class="input-login">
+                    <div class="input-box">
+                        <label for="username">รหัสประจำตัวนักศึกษา <span>*</span></label>
+                        <input type="text" id="username" class="box-input" autocomplete="current-password" name="username">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">รหัสผ่าน <span>*</span></label>
+                        <input type="password" id="password" class="box-input" autocomplete="current-password" name="password">
+                    </div>
+                </div>  
+                <div class="submit">
+                    <div id="error" class="error-message"></div>
+                    <button type="submit" class="butt" id="loginbutton">เข้าสู่ระบบ</button>
+                </div>
+                <div class="register-butt">
+                    <p><a href="/student/signup">ลงทะเบียนผู้ใช้งาน</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

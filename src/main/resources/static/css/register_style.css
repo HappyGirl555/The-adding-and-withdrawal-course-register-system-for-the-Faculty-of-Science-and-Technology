@@ -1,0 +1,431 @@
+body{
+    margin: 0;
+    /*background-image:url('TU.jpg');
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;*/
+    font-family: 'Noto Sans Thai', sans-serif;
+    background-color: #ededed;
+}
+
+
+.menu-bar .menu #butt-register{
+    color: #471f00;
+    background-color:  #ededed;
+}
+
+.box{
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(255, 252, 252, 0.9);
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 50px;
+}
+
+
+.input_info{
+    width: 200px;
+    height: 30px;
+}
+table{
+    width: 100%;
+}
+th,tr{
+    text-align: left;
+
+}
+select{
+    width: 150px;
+    height: 30px;
+}
+span{
+    color: firebrick;
+}
+
+.sub{
+    text-align: center;
+}
+
+.input_rea{
+    width: 800px;
+    height: 50px;
+}
+
+.head-text{
+    text-align: center;
+    margin: 20px;
+}
+
+.date{
+    margin: 20px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.history{
+    margin: 20px;
+}
+
+.address{
+    margin: 20px;
+}
+
+.add-subSubject{
+    margin: 20px;
+}
+
+.butt{
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: dodgerblue;
+    color: aliceblue;
+    border-color:aliceblue ;
+    border-radius: 10px;
+}
+
+
+.add-drop{
+    border: 1px solid black;
+    text-align: left;
+    width: 100px;
+    height: 30px;
+}
+.add{
+    margin-top: 20px;
+}
+
+.drop{
+    margin-top: 20px;
+}
+
+.sub-table{
+    border-collapse: collapse;
+}
+
+
+
+
+.subject-Inputs{
+    float: left;
+    text-align: center;
+    width:80px;
+    height:30px;
+    margin-right: 18px;
+}
+
+.th_header_subject{
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(50, 76, 161);
+    
+}
+
+.th_header_subject_Code{
+    width: 70px;
+    height: 30px;
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(50, 76, 161);
+    
+}
+
+.th_header_subject_Name{
+    width: 150px;
+    height: 30px;
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(50, 76, 161);
+    
+}
+
+.th_header_subject_Section{
+    width: 70px;
+    height: 30px;
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(50, 76, 161);
+    
+}
+
+.th_header_subject_Date{
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(50, 76, 161);
+    
+}
+
+.th_header_subject_Credit{
+    width: 70px;
+    height: 30px;
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(50, 76, 161);
+    
+}
+
+.th_header_subject_Teacher{
+    width: 150px;
+    height: 30px;
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(50, 76, 161);
+    
+}
+
+.th_subject{
+    margin: auto;
+    padding: 8px;
+    text-align: center;
+    color:rgb(5, 39, 68);
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.th_subject1{
+    width: 70px;
+    height: 30px;
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+}
+
+.cancle{
+    font-size: 17px;
+    margin: 0;
+    width: 80px;
+    height: 40px;
+    background-color: #de351f;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 0px
+}
+
+.cancle:hover{
+    background-color: #ad1a04;
+}
+
+.num_subject{
+  margin-top: 20px;  
+    
+}
+
+.add-drop-buttom{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 0 ;
+    background-color: #34d2eddb;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.add-drop-buttom:hover{
+    background-color: #0e869bdb;
+}
+
+.addSubject {
+    margin-top  : 300 px;
+}
+
+
+
+.addSubjectName{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(216, 216, 216);
+}
+
+.subjectCode{
+    margin: 0;
+    width: 60px;
+    height: 30px;
+}
+
+.subjectName{
+    margin: 0;
+    width: 150px;
+    height: 30px;
+}
+
+.subjectSection{
+    margin: 0;
+    width: 70px;
+    height: 30px;
+}
+
+.subjectCredit{
+    margin: 0;
+    width: 50px;
+    height: 30px;
+}
+
+.subjectDate{
+    margin: 0;
+    width: 80px;
+    height: 30px;
+}
+
+.subjectTeacher{
+    margin: 0;
+    width: 150px;
+    height: 30px;
+}
+
+
+input{
+    border-radius: 5px ;
+
+    border: 1px solid #7e5f38;
+}
+
+input:focus{
+    outline:  0;
+    border: 2px solid #140086;
+}
+
+.success input{
+    border: 2px solid #07b32f;
+}
+
+.error input{
+    border: 2px solid #cc1d1d;
+}
+
+.success select{
+    border: 2px solid #07b32f;
+}
+
+.error select{
+    border: 2px solid #cc1d1d;
+}
+
+
+
+.tab{
+    padding-left: 10px;
+    background-color: #fff7d1;
+}
+
+.datebox{
+    margin-left: 10px ;
+    font-size: 15px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+
+.header{
+    background-color:azure;
+    display: flex;
+    justify-content: space-between;
+}
+
+select {
+    
+
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+option {
+    padding-right: 20px;
+
+}
+
+.error_table{
+    color: #ad1a04;
+    font-size: 14px;
+}
+
+.head-add{
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.addtable{
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: rgba(114, 168, 255, 0.5);
+    border-radius: 10px;
+}
+
+
+
+.subjectCause{
+    width: 100%;
+    height: 70px;
+}
+
+.hr-sub {
+     
+    border-top: 1px dashed #545151; 
+    width: 100%; 
+
+}
+
+.popup .content{
+    position:absolute;
+    top : 50%;
+    height : 50%;
+    transform: transform(-50%,-50%);
+    background-color : rgb(255,255,255);
+    width : 450px;
+    height : 350px;
+    z-index:2;
+    text-align: center;
+    border-radius : 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+}
+
+  /*
+    align-items: center;
+    justify-content: center;
+
+   */
+/*
+.popup{
+    align-items: center;
+    justify-content: center;
+}
+
+.popup .overlay{
+    display:fixed;
+    top: 0px;
+    left: 0px;
+    width:100vw;
+    Height:100vh;
+    background-color:rgba(207, 0, 0, 0.7);
+}
+
+
+.success-image{
+    margin-top : 40px;
+    width : 200px;
+    height : 200px;
+}*/

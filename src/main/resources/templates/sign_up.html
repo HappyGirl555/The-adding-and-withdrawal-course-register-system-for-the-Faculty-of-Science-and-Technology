@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sign_up_styles.css">
+    <script type="module" src="/script/sign_up_scripts.js" defer></script>
+    <link rel="icon" type="image/png" href="logotu.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
+    <title>ลงทะเบียนผู้ใช้งาน</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="signupForm" class="form-sign-up">
+            <div class ="box2">
+                <div class="header-login">
+                    <h3>ลงทะเบียนใหม่เพื่อเข้าสู่ระบบ</h3>
+                </div>
+                <div class="input-login">
+                    <div class="input-box">
+                        <label for="studentID">เลขประจำตัวนักศึกษา  <span>*</span></label>
+                        <input id="studentID" class="box-input" >
+                    </div>
+                    <div class="input-box">
+                        <label for="password-uni">รหัสผ่านทางสำนักทะเบียน  <span>*</span></label>
+                        <input type="password" id="password-uni" class="box-input">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">รหัสผ่าน  <span>*</span></label> 
+                        <input type="password" id="password" class="box-input">
+                    </div>
+                </div>  
+                <div class="submit">
+                    <div id="error" class="error-message"></div>
+                    <button type="submit" class="butt" id="sign-in-butt">ลงทะเบียน</button>
+                </div>
+                <div class="login-butt">
+                    <p><a href="/">เข้าสู่ระบบ</a></p>
+                </div>              
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
