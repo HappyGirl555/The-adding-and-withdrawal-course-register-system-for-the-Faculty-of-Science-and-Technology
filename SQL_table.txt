@@ -11,7 +11,7 @@ create table student(
 
 create table request(
 	reqid varchar(7) not null,
-	studentid varchar(10) not null,
+	stdid varchar(10) not null,
 	prefix varchar(255) not null,
 	firstname varchar(255) not null,
 	lastname varchar(255) not null,
@@ -28,12 +28,13 @@ create table request(
 	phone varchar(10) null,
 	date date not null,
 	time time not null,
-	foreign key(studentid) REFERENCES student(studentid) ,
+	foreign key(stdid) REFERENCES student(studentid) ON DELETE CASCADE,
 	primary key(reqid)
 );
 
-create table add_subject_lists(
-		reqid varchar(255),
+create table addsubject(
+        addid bigint,
+		rid varchar(255),
 		subject_code varchar(255) not null,
 		subject_name varchar(255) not null,
 		subject_sec varchar(6) not null,
@@ -42,12 +43,13 @@ create table add_subject_lists(
 		subject_teacher varchar(255) not null,
 		subject_cause varchar(255) not null,
 		subject_teacher_Check boolean not null,
-		foreign key(reqid) REFERENCES request(reqid) ,
-		primary key(reqid,subject_code)
+		foreign key(rid) REFERENCES request(reqid) ON DELETE CASCADE,
+		primary key(addid)
 );
 
-create table drop_subject_lists(
-		reqid varchar(255),
+create table dropsubject(
+        dropid bigint,
+		rid varchar(255),
 		subject_code varchar(255) not null,
 		subject_name varchar(255) not null,
 		subject_sec varchar(6) not null,
@@ -56,6 +58,6 @@ create table drop_subject_lists(
 		subject_teacher varchar(255) not null,
 		subject_cause varchar(255) not null,
 		subject_teacher_Check boolean not null,
-		foreign key(reqid) REFERENCES request(reqid) ,
-		primary key(reqid,subject_code)
+		foreign key(rid) REFERENCES request(reqid) ON DELETE CASCADE,
+		primary key(dropid)
 );

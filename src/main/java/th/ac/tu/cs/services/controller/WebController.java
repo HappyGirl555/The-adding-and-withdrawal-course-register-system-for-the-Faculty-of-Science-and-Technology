@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 public class WebController {
 
 
-
     @GetMapping("/login")
     public String loginPage(){
         return "login";

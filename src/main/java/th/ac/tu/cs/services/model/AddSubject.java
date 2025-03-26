@@ -1,10 +1,27 @@
 package th.ac.tu.cs.services.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+@Entity
+@Table(name = "addsubject")
 public class AddSubject {
 
-    private String date;
-    private String reqid;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long addid;
+
+
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "reqid")
+    private Request request;
+
     private String subject_code;
+    private String date;
     private String subject_name;
     private String subject_sec;
     private String subject_date;
@@ -17,11 +34,10 @@ public class AddSubject {
 
     }
 
-    public AddSubject( String date, String reqid, String subject_code, String subject_name, String subject_sec, String subject_date, String subject_credit,
+    public AddSubject(  String date, Request request, String subject_code, String subject_name, String subject_sec, String subject_date, String subject_credit,
                        String subject_teacher, String subject_cause, Boolean subject_teacher_check){
-
         this.date = date;
-        this.reqid = reqid;
+        this.request = request;
         this.subject_code=subject_code;
         this.subject_name=subject_name;
         this.subject_sec=subject_sec;
@@ -32,6 +48,8 @@ public class AddSubject {
         this.subject_teacher_check=subject_teacher_check;
     }
 
+
+
     public String getDate() {
         return date;
     }
@@ -40,14 +58,23 @@ public class AddSubject {
         this.date = date;
     }
 
-    public String getReqid() {
-        return reqid;
+    public Request getRequest() {
+        return request;
     }
 
-    public void setReqid(String reqid) {
-        this.reqid = reqid;
+    public void setRequest(Request request) {
+        this.request = request;
     }
 
+    /*
+        public String getReqid() {
+            return reqid;
+        }
+
+        public void setReqid(String reqid) {
+            this.reqid = reqid;
+        }
+    */
     public String getSubject_code() {
         return subject_code;
     }
@@ -114,7 +141,7 @@ public class AddSubject {
 
     public void print() {
         System.out.println(date);
-        System.out.println(reqid);
+       // System.out.println(reqid);
         System.out.println(subject_name);
         System.out.println(subject_sec);
         System.out.println(subject_code);

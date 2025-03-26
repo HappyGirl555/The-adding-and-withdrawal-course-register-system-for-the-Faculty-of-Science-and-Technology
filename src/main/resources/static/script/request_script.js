@@ -53,7 +53,6 @@ fetch(`http://localhost:4004/api/request/add`,
             subjects.forEach(subject => {
                 const row = document.createElement("tr")
                 row.classList.add("content-row")
-
                 row.innerHTML = `
                 <td class="center-text">${dateFormatted(subject.date)}</td>
                 <td class="center-text">${subject.subject_code}</td>

@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import th.ac.tu.cs.services.repository.MyStudentRepository;
+import th.ac.tu.cs.services.repository.StudentRepository;
 
 
 import java.util.Optional;
@@ -17,7 +17,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
 
     @Autowired
-    private MyStudentRepository student_repository;
+    private StudentRepository student_repository;
 
 
     @Override

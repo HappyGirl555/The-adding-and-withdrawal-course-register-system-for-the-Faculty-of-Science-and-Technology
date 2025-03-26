@@ -12,11 +12,11 @@ import jakarta.persistence.Table;
 public class Student {
 
     @Id
-    @Column(name="studentid")
-    private String studentid;
-
     @Column(name="username")
     private String username;
+
+    @Column(name="studentid")
+    private String studentid;
 
     @Column(name="password")
     private String password;

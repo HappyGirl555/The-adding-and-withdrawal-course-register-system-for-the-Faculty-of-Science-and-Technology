@@ -1,9 +1,16 @@
 package th.ac.tu.cs.services.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import java.util.*;
 
+@Entity
 public class Request {
-
+    @Id
+    private String reqid;
     private String date;
     private String prefix;
     private String firstname;
@@ -20,15 +27,19 @@ public class Request {
     private String mobile_phone;
     private String phone;
     private String advisor;
-    private List <Subject> addSubjectList;
-    private List <Subject> dropSubjectList;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "request", fetch = FetchType.EAGER)
+    private List <AddSubject> addSubjectList;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "request", fetch = FetchType.EAGER)
+    private List <DropSubject> dropSubjectList;
     private String time;
-    private String reqid;
+
 
     public Request(String date, String prefix, String firstname, String lastname, String studentid,
                    String year, String department, String advisor, String address_number, String  moo,
                    String tumbol, String amphur, String province, String postalCode, String mobile_phone,
-                   String phone, List<Subject> addSubjectList, List<Subject> dropSubjectList) {
+                   String phone, List<AddSubject> addSubjectList, List<DropSubject> dropSubjectList) {
         this.date=date;
         this.prefix=prefix;
         this.firstname =firstname;
@@ -48,6 +59,30 @@ public class Request {
         this.addSubjectList = addSubjectList;
         this.dropSubjectList = dropSubjectList;
     };
+
+    public Request(String date,String time, String prefix, String firstname, String lastname, String studentid,
+                   String year, String department, String advisor, String address_number, String  moo,
+                   String tumbol, String amphur, String province, String postalCode, String mobile_phone,
+                   String phone) {
+        this.date=date;
+        this.time = time;
+        this.prefix=prefix;
+        this.firstname =firstname;
+        this.lastname = lastname;
+        this.studentid = studentid;
+        this.year = year;
+        this.department = department;
+        this.address_number = address_number;
+        this.moo=moo;
+        this.tumbol=tumbol;
+        this.amphur=amphur;
+        this.province=province;
+        this.postalcode=postalCode;
+        this.mobile_phone = mobile_phone;
+        this.phone = phone;
+        this.advisor = advisor;
+    };
+
 
     public Request() {
 
@@ -200,13 +235,13 @@ public class Request {
         this.advisor = advisor;
     }
 
-    public List<Subject> getAddSubjectList() {return addSubjectList;}
+    public List<AddSubject> getAddSubjectList() {return addSubjectList;}
 
-    public void setAddSubjectList(List<Subject> addSubjectList) {this.addSubjectList = addSubjectList;}
+    public void setAddSubjectList(List<AddSubject> addSubjectList) {this.addSubjectList = addSubjectList;}
 
-    public List<Subject> getDropSubjectList() {return dropSubjectList;}
+    public List<DropSubject> getDropSubjectList() {return dropSubjectList;}
 
-    public void setDropSubjectList(List<Subject> dropSubjectList) {this.dropSubjectList = dropSubjectList;}
+    public void setDropSubjectList(List<DropSubject> dropSubjectList) {this.dropSubjectList = dropSubjectList;}
 
 
 
@@ -215,7 +250,7 @@ public class Request {
         System.out.println(prefix);
         System.out.println(firstname);
         System.out.println(lastname);
-        System.out.println(studentid);
+        //System.out.println(Student);
         System.out.println(year);
         System.out.println(department);
         System.out.println(address_number);
