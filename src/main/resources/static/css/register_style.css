@@ -86,6 +86,11 @@ span{
     border-radius: 10px;
 }
 
+.butt:hover{
+    cursor:pointer;
+    background-color: rgba(13, 33, 79, 0.8);
+}
+
 
 .add-drop{
     border: 1px solid black;
@@ -105,9 +110,6 @@ span{
     border-collapse: collapse;
 }
 
-
-
-
 .subject-Inputs{
     float: left;
     text-align: center;
@@ -116,13 +118,19 @@ span{
     margin-right: 18px;
 }
 
+#header_add_table{
+    background-color: rgb(150, 76, 161);
+}
+
+#header_drop_table{
+    background-color: rgb(50, 76, 161);
+}
+
 .th_header_subject{
     margin: auto;
     padding: 8px;
     text-align: center;
     color:aliceblue;
-    background-color: rgb(50, 76, 161);
-    
 }
 
 .th_header_subject_Code{
@@ -130,10 +138,8 @@ span{
     height: 30px;
     margin: auto;
     padding: 8px;
-    text-align: center;
     color:aliceblue;
-    background-color: rgb(50, 76, 161);
-    
+    text-align: center;
 }
 
 .th_header_subject_Name{
@@ -141,10 +147,8 @@ span{
     height: 30px;
     margin: auto;
     padding: 8px;
-    text-align: center;
     color:aliceblue;
-    background-color: rgb(50, 76, 161);
-    
+    text-align: center;
 }
 
 .th_header_subject_Section{
@@ -152,10 +156,8 @@ span{
     height: 30px;
     margin: auto;
     padding: 8px;
-    text-align: center;
     color:aliceblue;
-    background-color: rgb(50, 76, 161);
-    
+    text-align: center;
 }
 
 .th_header_subject_Date{
@@ -163,10 +165,8 @@ span{
     height: 30px;
     margin: auto;
     padding: 8px;
-    text-align: center;
     color:aliceblue;
-    background-color: rgb(50, 76, 161);
-    
+    text-align: center;
 }
 
 .th_header_subject_Credit{
@@ -174,10 +174,8 @@ span{
     height: 30px;
     margin: auto;
     padding: 8px;
-    text-align: center;
     color:aliceblue;
-    background-color: rgb(50, 76, 161);
-    
+    text-align: center;
 }
 
 .th_header_subject_Teacher{
@@ -185,10 +183,8 @@ span{
     height: 30px;
     margin: auto;
     padding: 8px;
-    text-align: center;
     color:aliceblue;
-    background-color: rgb(50, 76, 161);
-    
+    text-align: center;
 }
 
 .th_subject{
@@ -221,6 +217,7 @@ span{
 
 .cancle:hover{
     background-color: #ad1a04;
+    cursor: pointer;
 }
 
 .num_subject{
@@ -241,10 +238,11 @@ span{
 
 .add-drop-buttom:hover{
     background-color: #0e869bdb;
+    cursor: pointer;
 }
 
 .addSubject {
-    margin-top  : 300 px;
+    margin-top : 300 px;
 }
 
 
@@ -368,18 +366,25 @@ option {
 .addtable{
     text-align: center;
     padding: 20px;
-    margin: 20px;
-    margin-top: 0px;
-    margin-left: 0px;
-    background-color: rgba(114, 168, 255, 0.5);
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: rgba(88, 54, 112, 0.29);
     border-radius: 10px;
 }
 
-
+.droptable{
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: rgba(56, 111, 192, 0.25);
+    border-radius: 10px;
+}
 
 .subjectCause{
     width: 100%;
     height: 70px;
+    border: 0px;
 }
 
 .hr-sub {

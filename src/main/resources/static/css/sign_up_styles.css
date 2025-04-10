@@ -1,14 +1,16 @@
 body{
     /*background-image:url('TU.jpg');
-    background-attachment: fixed;
-    background-size:cover;
+
+
     background-position: center;*/
     
     display: flex;
     justify-content: center; 
     align-items: center;
     font-family: 'Noto Sans Thai', sans-serif;
-    background-color: rgb(226, 193, 130);
+    background : linear-gradient(45deg, rgb(131, 41, 41), rgb(234, 167, 89), rgb(131, 41, 41) );
+    background-size:cover;
+    background-attachment: fixed;
 }
 
 h3{
@@ -17,16 +19,13 @@ h3{
 
 .container{
     width: 500px;
-    height:430px;
+    height:auto;
     text-align: center;
-    background-color: rgba(247, 251, 255, 0.9);
+    background-color: rgba(247, 251, 255, 0.8);
     border-radius: 50px;
-    align-items: center;
-    justify-content: center;
     padding: 20px;
     margin:auto;
-    margin-top: 150px;
-    padding: auto;
+    margin-top: 110px;
 }
 
 .form-login{
@@ -57,19 +56,21 @@ h3{
     font-size: 16px;
     width: 100%;
     height: 40px;
-    border-radius: 50px;
-    border : 0px;
-    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    border : 1px solid #97BDD5;
     font-family: 'Noto Sans Thai', sans-serif;
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
 }
 
 .container .input-box .box-input:focus{
     outline: none;
-    background-color: rgb(250, 216, 180);
+    background-color: #F3F3F3;
 }
 
-.box1, .box2{
+.box2{
     margin: 15px;
+    height:auto;
 }
 
 .logo{
@@ -85,10 +86,11 @@ h3{
 .container .box2 .submit .butt:hover{
     background-color: rgb(229, 143, 52);
     color: azure;
+    cursor: pointer;
 }
 .error-message{
      height: 20px;
-     color: red;
+     color: rgb(96, 41, 41);
      margin: 5px;
 }
 
@@ -104,8 +106,9 @@ h3{
     width: 350px;
     height: 50px;
     border-radius: 20px;
-    border: 0px solid rgb(255, 183, 0);
-    background-color: rgb(255, 183, 0);
+    border: 0px;
+    color: white;
+    background-color: #570000;
 }
 
 .container .box2 .header-login h3{

@@ -60,7 +60,7 @@ fetch(`http://localhost:4004/api/request/add`,
                 <td class="center-text">${subject.subject_sec}</td>
                 <td class="center-text">${subject.subject_credit}</td>
                 <td class="center-text">${subject.subject_teacher}</td>
-                <td class="center-text">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
+                <td class="center-text ${subject.subject_teacher_check ? 'check-success' : 'check-unsuccess'}">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
                 `
                 add_content.appendChild(row)
             })
@@ -118,8 +118,8 @@ fetch(`http://localhost:4004/api/request/drop`,
              const drop_content = document.getElementById("drop-content")
              subjects.forEach(subject => {
                 const row = document.createElement("tr")
-                
                 row.classList.add("content-row")
+
 
                 row.innerHTML = `
                 <td class="center-text">${dateFormatted(subject.date)}</td>
@@ -128,7 +128,7 @@ fetch(`http://localhost:4004/api/request/drop`,
                 <td class="center-text">${subject.subject_sec}</td>
                 <td class="center-text">${subject.subject_credit}</td>
                 <td class="center-text">${subject.subject_teacher}</td>
-                <td class="center-text">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
+                <td class="center-text ${subject.subject_teacher_check ? 'check-success' : 'check-unsuccess'}">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
                 `
                 drop_content.appendChild(row)
             })
