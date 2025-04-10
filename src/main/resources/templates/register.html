@@ -14,206 +14,205 @@
     <title>คำร้องขอเพิ่มถอนรายวิชา</title>
 </head>
 <body>
-<div class="bar">
-    <div class="logobox">
-        <div class="logo-fac">
-            <img src="./picture/logo-sci.png" class="logo">
-            <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์</h2>
-        </div>
-        
-    </div>
-    <div class="menu-bar">
-        <div class="menu">
-            <button id="butt-register" class="butt-menu">ลงทะเบียนเพิ่ม-ถอน</button>
-            <button id="butt-result" class="butt-menu" onclick="window.location.href='./request'">ผลการลงทะเบียน</button>
-        </div>
-        <div class="user">
-            <div class="name-text">
-                <h4 id="user-name"></h4>
+    <div class="bar">
+        <div class="container">
+            <div class="logobox">
+                <img src="./picture/logo-sci.png" class="logo">
+                <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์</h2>
             </div>
-            <div class="pf-pic">
-                <img src="/picture/user.png" class="user-pic">
-            </div>
-            <div class="logout-butt">
-                <form action="/logout" method="post">
-                    <button id="butt-logout" class="butt-menu">ออกจากระบบ</button>
-                </form>
-             </div> 
-        </div>
-    </div>
-</div>
-<div class="box">
-    <div class="head-text">
-        <h1>คำร้องขอเพิ่มถอนรายวิชา</h1>
-        <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
-    </div>
-    <!--action="/students/save" method="post"-->
-    <form  id="myform" >
-
-        <div class="history">
-            <h3>ประวัตินักศึกษา</h3>
-                <table>
-                    <tr>
-                        <th>
-                            <label for="prefix"> คำนำหน้า <span>*</span> </label>
-                        </th>
-                        <th>
-                            <label for="firstname">ชื่อ <span>*</span></label>
-                        </th>
-                        <th>
-                            <label for="lastname">นามสกุล <span>*</span></label>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select name="prefix" id="prefix" >
-                                <option value="" selected disabled>กรุณาเลือก...</option>
-                                <option value="นาย">นาย</option>
-                                <option value="นางสาว">นางสาว</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input name="firstname" id="firstname" class="input_info" >
-                        </td>
-                        <td>
-                            <input name="lastname" id="lastname" class="input_info" >
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="year"> ชั้นปีที <span>*</span> </label></th>
-                        <th><label for="studentid">เลขทะเบียน <span>*</span> </label></th>
-                        <th><label for="department">สาขาวิชา <span>*</span></label></th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select name="year" id="year">
-                                <option value="" selected disabled>กรุณาเลือก...</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                            </select>
-                        </td>
-                        <td><input name="studentid" id="studentid" class="input_info" ></td>
-                        <td><input name="department" id="department" class="input_info"  ></td>
-                    </tr>
-                </table>
-        </div>
-        <hr>
-        <div class="address">
-            <h3>ที่อยู่นักศึกษา</h3>
-                <table>
-                    <tr>
-                        <th>
-                            <label for="address_number">บ้านเลขที่ <span>*</span></label>
-                        </th>
-                        <th>
-                            <label for="moo">หมู่ที่ <span>*</span></label>
-                        </th>
-                        <th>
-                            <label for="tumbol">ตำบล <span>*</span></label>
-                        </th>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="address_number" id="address_number" class="input_info" >
-                        </td>
-                        <td>
-                            <input name="moo" id="moo" class="input_info" >
-                        </td>
-                        <td>
-                            <input name="tumbol" id="tumbol" class="input_info" ><br>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <th>
-                            <label for="amphur">อำเภอ <span>*</span></label>
-                        </th>
-                        <th>
-                            <label for="province">จังหวัด <span>*</span></label>
-                        </th>
-                        <th>
-                            <label for="postalcode">รหัสไปรษณีย์ <span>*</span></label>
-                        </th>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="amphur" id="amphur" class="input_info" >
-                        </td>
-                        <td>
-                            <input name="province" id="province" class="input_info" >
-                        </td>
-                        <td>
-                            <input name="postalcode" id="postalcode" class="input_info" >
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <label for="mobile_phone"> โทรศัพท์มือถือ <span>*</span></label>
-                        </th>
-                        <th>
-                            <label for="phone">โทรศัพท์บ้าน(ถ้ามี)</label>
-                        </th>
-                        <th>
-                            <label for="advisor">อาจารย์ที่ปรึกษา <span>*</span></label>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="mobile_phone" id="mobile_phone" class="input_info" ><br>
-                        </td>
-                        <td>
-                            <input name="phone" id="phone" class="input_info">
-                        </td>
-                        <td>
-                            <input name="advisor" id="advisor" class="input_info" >
-                        </td>
-                    </tr>
-                </table>
-        </div>
-        <hr>
-
-        <div class="add-subSubject">
-            <h3>รายละเอียดการเพิ่ม-ถอน<span>*</span></h3>
-
-            <div class="addSubject">
-                <div class="head-add">
-                    <label>จำนวนขอเพิ่มรายวิชา (สูงสุด 10 วิชา) <span>*</span></label>
-                    <button onclick = "addSubjectInputs()" type="button" id = "add_as" class="add-drop-buttom">+</button>
-                    <button onclick = "drop_addSubjectInputs()" type="button" id = "drop_as" class="add-drop-buttom">-</button>
-                    <br>
-                    <div class="error_table"></div>
+            <div class="menu-bar">
+                <div class="menu">
+                    <button id="butt-register" class="butt-menu">ลงทะเบียนเพิ่ม-ถอน</button>
+                    <button id="butt-result" class="butt-menu" onclick="window.location.href='./request'">ผลการลงทะเบียน</button>
                 </div>
-                <br>
-                    <div id="addtable"></div>
-
-            </div>
-
-            <div class="dropSubject">
-                <div class="head-add">
-                    <label>จำนวนขอถอนรายวิชา (สูงสุด 10 วิชา) <span>*</span></label>
-                    <button onclick = "dropSubjectInputs()" type="button" id = "add_ds" class="add-drop-buttom">+</button>
-                    <button onclick = "drop_dropSubjectInputs()" type="button" id = "drop_ds" class="add-drop-buttom">-</button>
-                    <br>
-                    <div class="error_table"></div>
+                <div class="user">
+                    <div class="name-text">
+                        <h4 id="user-name"></h4>
+                    </div>
+                    <div class="pf-pic">
+                        <img src="/picture/user.png" class="user-pic">
+                    </div>
+                    <div class="logout-butt">
+                        <form action="/logout" method="post">
+                            <button id="butt-logout" class="butt-menu">ออกจากระบบ</button>
+                        </form>
+                     </div>
                 </div>
-                <br>    
-                    <div id="droptable"></div>
             </div>
         </div>
-        <br>
-        <div class="sub">
-            <button type="submit" class="butt">submit</button>
+    </div>
+    <div class="box">
+        <div class="head-text">
+            <h1>คำร้องขอเพิ่มถอนรายวิชา</h1>
+            <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
         </div>
+        <!--action="/students/save" method="post"-->
+        <form  id="myform" >
 
-    </form>
-</div>
+            <div class="history">
+                <h3>ประวัตินักศึกษา</h3>
+                    <table>
+                        <tr>
+                            <th>
+                                <label for="prefix"> คำนำหน้า <span>*</span> </label>
+                            </th>
+                            <th>
+                                <label for="firstname">ชื่อ <span>*</span></label>
+                            </th>
+                            <th>
+                                <label for="lastname">นามสกุล <span>*</span></label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="prefix" id="prefix" >
+                                    <option value="" selected disabled>กรุณาเลือก...</option>
+                                    <option value="นาย">นาย</option>
+                                    <option value="นางสาว">นางสาว</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input name="firstname" id="firstname" class="input_info" >
+                            </td>
+                            <td>
+                                <input name="lastname" id="lastname" class="input_info" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="year"> ชั้นปีที <span>*</span> </label></th>
+                            <th><label for="studentid">เลขทะเบียน <span>*</span> </label></th>
+                            <th><label for="department">สาขาวิชา <span>*</span></label></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="year" id="year">
+                                    <option value="" selected disabled>กรุณาเลือก...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                            </td>
+                            <td><input name="studentid" id="studentid" class="input_info" ></td>
+                            <td><input name="department" id="department" class="input_info"  ></td>
+                        </tr>
+                    </table>
+            </div>
+            <hr>
+            <div class="address">
+                <h3>ที่อยู่นักศึกษา</h3>
+                    <table>
+                        <tr>
+                            <th>
+                                <label for="address_number">บ้านเลขที่ <span>*</span></label>
+                            </th>
+                            <th>
+                                <label for="moo">หมู่ที่ <span>*</span></label>
+                            </th>
+                            <th>
+                                <label for="tumbol">ตำบล <span>*</span></label>
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="address_number" id="address_number" class="input_info" >
+                            </td>
+                            <td>
+                                <input name="moo" id="moo" class="input_info" >
+                            </td>
+                            <td>
+                                <input name="tumbol" id="tumbol" class="input_info" ><br>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="amphur">อำเภอ <span>*</span></label>
+                            </th>
+                            <th>
+                                <label for="province">จังหวัด <span>*</span></label>
+                            </th>
+                            <th>
+                                <label for="postalcode">รหัสไปรษณีย์ <span>*</span></label>
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="amphur" id="amphur" class="input_info" >
+                            </td>
+                            <td>
+                                <input name="province" id="province" class="input_info" >
+                            </td>
+                            <td>
+                                <input name="postalcode" id="postalcode" class="input_info" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="mobile_phone"> โทรศัพท์มือถือ <span>*</span></label>
+                            </th>
+                            <th>
+                                <label for="phone">โทรศัพท์บ้าน(ถ้ามี)</label>
+                            </th>
+                            <th>
+                                <label for="advisor">อาจารย์ที่ปรึกษา <span>*</span></label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="mobile_phone" id="mobile_phone" class="input_info" ><br>
+                            </td>
+                            <td>
+                                <input name="phone" id="phone" class="input_info">
+                            </td>
+                            <td>
+                                <input name="advisor" id="advisor" class="input_info" >
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+            <hr>
+
+            <div class="add-subSubject">
+                <h3>รายละเอียดการเพิ่ม-ถอน<span>*</span></h3>
+
+                <div class="addSubject">
+                    <div class="head-add">
+                        <label>จำนวนขอเพิ่มรายวิชา (สูงสุด 10 วิชา) <span>*</span></label>
+                        <button onclick = "addSubjectInputs()" type="button" id = "add_as" class="add-drop-buttom">+</button>
+                        <button onclick = "drop_addSubjectInputs()" type="button" id = "drop_as" class="add-drop-buttom">-</button>
+                        <br>
+                        <div class="error_table"></div>
+                    </div>
+                    <br>
+                        <div id="addtable"></div>
+
+                </div>
+
+                <div class="dropSubject">
+                    <div class="head-add">
+                        <label>จำนวนขอถอนรายวิชา (สูงสุด 10 วิชา) <span>*</span></label>
+                        <button onclick = "dropSubjectInputs()" type="button" id = "add_ds" class="add-drop-buttom">+</button>
+                        <button onclick = "drop_dropSubjectInputs()" type="button" id = "drop_ds" class="add-drop-buttom">-</button>
+                        <br>
+                        <div class="error_table"></div>
+                    </div>
+                    <br>
+                        <div id="droptable"></div>
+                </div>
+            </div>
+            <br>
+            <div class="sub">
+                <button type="submit" class="butt">submit</button>
+            </div>
+
+        </form>
+    </div>
 </body>
 </html>
 
