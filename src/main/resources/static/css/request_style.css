@@ -18,7 +18,8 @@ td {
     white-space: normal; 
     word-break: break-word;
     padding : 5px 5px 5px 5px;
-
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
 }
 
 .box{
@@ -42,27 +43,17 @@ td {
 }
 
 .order-table{
-    width: 100%;
-    border-radius: .6rem;
-    background-color: #C2C2C2;
+    width: 100%
 }
 
 thead{
+    background-color: rgb(150, 217, 213);
     gap: 0px;
-    padding: .8rem 1rem;
-}
-
-tbody{
-    background-color: #F3F3F3;
-    padding: .8rem auto;
-}
-
-tbody tr:nth-child(even){
-    background-color: #DFDFDF;
 }
 
 th{
-    padding: 20px 10px 20px 10px ;
+    border: 1px solid rgb(148, 148, 148);
+    padding: 10px;
 }
 
 table{
@@ -120,15 +111,7 @@ table{
     margin: 20px 10px 20px 10px;
 }
 
-.check-success{
-    font-weight: bold;
-    color:green;
-}
 
-.check-unsuccess{
-    font-weight: bold;
-    color:red;
-}
 
 
 

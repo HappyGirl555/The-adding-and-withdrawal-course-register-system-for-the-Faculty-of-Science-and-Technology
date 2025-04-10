@@ -1,3 +1,5 @@
+
+
 var list_addSubject=[];
 var list_dropSubject=[];
 
@@ -59,7 +61,7 @@ function addSubjectInputs() {
        sub.innerHTML =
         `
          <table class = "sub-table">
-            <tr id="header_add_table">
+            <tr id="header_table">
                 <th class="th_header_subject">วิชาที่</th>
                 <th class="th_header_subject_Code">รหัสวิชา</th>
                 <th class="th_header_subject_Name">ชื่อวิชา</th>
@@ -129,7 +131,7 @@ function dropSubjectInputs() {
        sub.innerHTML =
         `
         <table class="sub-table">
-            <tr id="header_drop_table">
+            <tr id="header_table">
                 <th class="th_header_subject">วิชาที่</th>
                 <th class="th_header_subject_Code">รหัสวิชา</th>
                 <th class="th_header_subject_Name">ชื่อวิชา</th>
@@ -156,7 +158,7 @@ function dropSubjectInputs() {
         <br>
         <button onclick="cancleDropSubject(this)" type="button" id="cancle" class="cancle" >ยกเลิก</button>
         `
-        sub.classList.add("droptable")
+        sub.classList.add("addtable")
         subAll.appendChild(sub)
     } 
 }
@@ -404,7 +406,7 @@ const saveForm = () =>{
         Swal.fire({
             title: "ลงทะเบียนเพิ่ม-ถอนสำเร็จ",
             icon: "success",
-            timer: 3500
+            draggable: true
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = '/request';
@@ -416,8 +418,8 @@ const saveForm = () =>{
         Swal.fire({
             title: "เกิดข้อผิดพลาดในการบันทึกข้อมูล",
             text: error.message,
-            timer: 3500,
-            showConfirmButton: false
+            icon: "error",
+            draggable: true
         });
     });
 }

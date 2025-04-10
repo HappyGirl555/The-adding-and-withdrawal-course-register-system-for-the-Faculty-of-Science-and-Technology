@@ -9,11 +9,6 @@ const failRegister = () =>{
         failDisplay.innerHTML = "ลงทะเบียนเข้าสู่ระบบไม่สำเร็จ กรุณากรอกใหม่อีกครั้ง"
 }
 
-const emptyInput = () =>{
-        const failDisplay = document.getElementById("error")
-        failDisplay.innerHTML = "กรุณากรอกข้อมูลให้ครบถ้วน"
-}
-
 const dupRegister = () =>{
         const failDisplay = document.getElementById("error")
         failDisplay.innerHTML = "รหัสนักศึกษามีบัญชีในระบบแล้ว"
@@ -74,13 +69,11 @@ sign_up_form.addEventListener("submit", async event => {
      console.log(data)
 
      if(!notEmpty()){
-        emptyInput()
         Swal.fire({
             title: "กรุณากรอกข้อมูลให้ครบถ้วน",
             text: error.message,
             icon: "error",
-            timer: 2500,
-            showConfirmButton: false
+            draggable: true
         });
         return 
      }
@@ -97,13 +90,6 @@ sign_up_form.addEventListener("submit", async event => {
      if (!check_student.ok || password.value.length < 8 || username.value.length < 8){
            console.log("error-check")
            failRegister()
-           Swal.fire({
-               title: "ลงทะเบียนเข้าสู่ระบบไม่สำเร็จ \n กรุณากรอกใหม่อีกครั้ง",
-               text: error.message,
-               icon: "error",
-               timer: 2500,
-               showConfirmButton: false
-           });
            throw new Error("Failed Register!!!")
       }
 
@@ -152,13 +138,6 @@ sign_up_form.addEventListener("submit", async event => {
                     return response.text();
                     }else if(response.status == 409){
                         dupRegister()
-                        Swal.fire({
-                            title: "รหัสนักศึกษามีบัญชีในระบบแล้ว",
-                            text: error.message,
-                            icon: "error",
-                            timer: 2500,
-                            showConfirmButton: false
-                        });
                         return
                     }else{
                     console.log("ไม่สำเร็จ")
@@ -170,8 +149,7 @@ sign_up_form.addEventListener("submit", async event => {
                     title: "เกิดข้อผิดพลาดในการบันทึกข้อมูล",
                     text: error.message,
                     icon: "error",
-                    timer: 2500,
-                    showConfirmButton: false
+                    draggable: true
                 });
             });
 
