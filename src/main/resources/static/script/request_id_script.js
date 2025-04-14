@@ -14,6 +14,11 @@ const checkPhone = (phone) =>{
        }
 }
 
+const backToRequest = document.getElementById("backRequest");
+backToRequest.addEventListener("click", () =>{
+    window.location.href = `/request`
+});
+
 
 
 const detailRequest = (description,type,id) =>{

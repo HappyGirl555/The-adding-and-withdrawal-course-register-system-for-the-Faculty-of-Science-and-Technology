@@ -17,14 +17,15 @@ async function fetchUserData() {
     const student = await response.json();
     const info_box =document.getElementById('info-describe');
     info_box.innerHTML =`
-            <div>
+            <div style="margin:0px 0px 20px 0px;">
                 <h2>ชื่อ-นามสกุล : ${student.prefix}${student.firstname} ${student.lastname}</h2>
             </div>
-            <div>
-                <h2>รหัสนักศึกษา : ${student.studentid}</h2>
+            <div style="margin:0px 0px 20px 0px;">
+                <h2 style="margin:0;">รหัสนักศึกษา : ${student.studentid}</h2>
             </div>
-            <div>
-                <h2>สาขาวิชา : ${student.department}</h2>
+            <div style="display:flex;">
+                <h2 style="margin:0;">ชั้นปีที่ : ${68 - parseInt(student.studentid.slice(0,2))} &nbsp; </h2>
+                <h2 style="margin:0;">สาขาวิชา : ${student.department}</h2>
             </div>
     `
 

@@ -8,10 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
     <script src = "/script/register_script.js" defer></script>
     <script src = "/script/bar_script.js" defer></script>
-    <title>ลงทะเบียนเพิ่ม-ถอนรายวิชา</title>
+    <title>คำร้องขอเพิ่มถอนรายวิชา</title>
 </head>
 <body>
     <div class="bar">
@@ -52,55 +53,24 @@
 
             <div class="history">
                 <h3>ประวัตินักศึกษา</h3>
-                    <table>
-                        <tr>
-                            <th>
-                                <label for="prefix"> คำนำหน้า <span>*</span> </label>
-                            </th>
-                            <th>
-                                <label for="firstname">ชื่อ <span>*</span></label>
-                            </th>
-                            <th>
-                                <label for="lastname">นามสกุล <span>*</span></label>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <select name="prefix" id="prefix" >
-                                    <option value="" selected disabled>กรุณาเลือก...</option>
-                                    <option value="นาย">นาย</option>
-                                    <option value="นางสาว">นางสาว</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input name="firstname" id="firstname" class="input_info" >
-                            </td>
-                            <td>
-                                <input name="lastname" id="lastname" class="input_info" >
-                            </td>
-                        </tr>
-                        <tr>
-                            <th><label for="year"> ชั้นปีที <span>*</span> </label></th>
-                            <th><label for="studentid">เลขทะเบียน <span>*</span> </label></th>
-                            <th><label for="department">สาขาวิชา <span>*</span></label></th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <select name="year" id="year">
-                                    <option value="" selected disabled>กรุณาเลือก...</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                </select>
-                            </td>
-                            <td><input name="studentid" id="studentid" class="input_info" ></td>
-                            <td><input name="department" id="department" class="input_info"  ></td>
-                        </tr>
-                    </table>
+                    <div>
+                        <div style="display: flex; gap:50px; margin: 20px 0 20px 0;">
+                            <div style="display: flex; align-items: center;"><h4 style="margin: 0;">คำนำหน้า</h4>&nbsp;<p id="prefix" style="margin: 0;"></p></div>
+                            <div style="display: flex; align-items: center;"><h4 style="margin: 0;">ชื่อ</h4>&nbsp;<p id="firstname" style="margin: 0;"></p></div>
+                            <div style="display: flex; align-items: center;"><h4 style="margin: 0;">นามสกุล</h4>&nbsp;<p id="lastname" style="margin: 0;"></p></div>
+                        </div>
+                        <div style="display: flex; gap:50px; margin: 20px 0 20px 0;" >
+                            <div style="display: flex; align-items: center;"><h4 style="margin: 0;">ชั้นปีที่</h4>&nbsp;<p id="year" style="margin: 0;"></p></div>
+                            <div style="display: flex; align-items: center;"><h4 style="margin: 0;">เลขทะเบียน</h4>&nbsp;<p id="studentid"style="margin: 0;"></p></div>
+                            <div style="display: flex; align-items: center;"><h4 style="margin: 0;">สาขาวิชา</h4>&nbsp;<p id="department"style="margin: 0;"></p></div>
+                        </div>
+                        <div style="display: flex; gap:50px; margin: 20px 0 20px 0;">
+                            <div>
+                                <label for="advisor" style="font-weight:bold;">อาจารย์ที่ปรึกษา<span>*</span>&nbsp;&nbsp;</label>
+                                <input name="advisor" id="advisor" class="input_info" >
+                            </div>
+                        </div>
+                    </div>
             </div>
             <hr>
             <div class="address">
@@ -160,9 +130,6 @@
                             <th>
                                 <label for="phone">โทรศัพท์บ้าน(ถ้ามี)</label>
                             </th>
-                            <th>
-                                <label for="advisor">อาจารย์ที่ปรึกษา <span>*</span></label>
-                            </th>
                         </tr>
                         <tr>
                             <td>
@@ -170,9 +137,6 @@
                             </td>
                             <td>
                                 <input name="phone" id="phone" class="input_info">
-                            </td>
-                            <td>
-                                <input name="advisor" id="advisor" class="input_info" >
                             </td>
                         </tr>
                     </table>
@@ -209,7 +173,7 @@
             </div>
             <br>
             <div class="sub">
-                <button type="submit" class="butt">submit</button>
+                <button type="submit" class="butt">ลงทะเบียน</button>
             </div>
 
         </form>

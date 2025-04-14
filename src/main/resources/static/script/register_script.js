@@ -34,11 +34,12 @@ fetch('http://localhost:4004/api/info',
           }
     }).then(student => {
            console.log(student)
-           document.getElementById('prefix').value = student.prefix
-           document.getElementById('firstname').value = student.firstname
-           document.getElementById('lastname').value =  student.lastname
-           document.getElementById('studentid').value = student.studentid
-           document.getElementById('department').value =  student.department
+           document.getElementById('prefix').textContent = student.prefix
+           document.getElementById('firstname').textContent = student.firstname
+           document.getElementById('lastname').textContent=  student.lastname
+           document.getElementById('studentid').textContent = student.studentid
+           document.getElementById('department').textContent =  student.department
+           document.getElementById('year').textContent =  68 - parseInt(student.studentid.slice(0,2))
       })
 
 
@@ -84,7 +85,7 @@ function addSubjectInputs() {
                 <input id="subject_cause${len_div+1}" style="width:100%; height:50px; border: 0px;padding: 1px 5px 1px 5px;">
             </div>
         </div>                  
-        <div>
+        <div style="text-align:right; margin-top: 5px">
             <button onclick="cancleAddSubject(this)" type="button" id="cancle" class="cancle" >ยกเลิก</button>
         </div>
         `
@@ -164,7 +165,7 @@ function dropSubjectInputs() {
                  <input id="subject_cause${len_div+1}" style="width:100%; height:50px; border: 0px;padding: 1px 5px 1px 5px;">
              </div>
          </div>                  
-         <div>
+         <div style="text-align:right; margin-top: 5px">
              <button onclick="cancleDropSubject(this)" type="button" id="cancle" class="cancle" >ยกเลิก</button>
          </div>
          `
@@ -294,18 +295,6 @@ const saveSubject = (idTable) => {
 
 const validateInfo = () =>{
 
-    var prefix = document.getElementById("prefix");
-    checkNotEmpty(prefix)
-    var firstname = document.getElementById("firstname");
-    checkNotEmpty(firstname)
-    var lastname= document.getElementById("lastname");
-    checkNotEmpty(lastname)
-    var studentid = document.getElementById("studentid");
-    checkValidNumber(studentid,10)
-    var studentYear = document.getElementById("year");
-    checkNotEmpty(studentYear)
-    var department = document.getElementById("department");
-    checkNotEmpty(department)
     var advisor = document.getElementById("advisor");
     checkNotEmpty(advisor)
     var address_number = document.getElementById("address_number");
@@ -374,12 +363,12 @@ const validateInput = () =>{
 
 const saveForm = () =>{
     date = getDate()
-    prefix = document.getElementById("prefix").value;
-    firstname = document.getElementById("firstname").value;
-    lastname= document.getElementById("lastname").value;
-    studentid = document.getElementById("studentid").value;
-    year = document.getElementById("year").value;
-    department = document.getElementById("department").value;
+    prefix = document.getElementById("prefix").innerText;
+    firstname = document.getElementById("firstname").innerText;
+    lastname= document.getElementById("lastname").innerText;
+    studentid = document.getElementById("studentid").innerText;
+    year = document.getElementById("year").innerText;
+    department = document.getElementById("department").innerText;
     advisor = document.getElementById("advisor").value;
     address_number = document.getElementById("address_number").value;
     moo = document.getElementById("moo").value;

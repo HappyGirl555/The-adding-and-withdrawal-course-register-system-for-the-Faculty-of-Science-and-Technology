@@ -1,7 +1,6 @@
 package th.ac.tu.cs.services.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -12,16 +11,12 @@ import org.springframework.web.multipart.MultipartFile;
 import th.ac.tu.cs.services.model.AddSubject;
 import th.ac.tu.cs.services.model.DropSubject;
 import th.ac.tu.cs.services.model.Request;
-//import th.ac.tu.cs.services.model.Subject;
 import th.ac.tu.cs.services.model.Student;
 import th.ac.tu.cs.services.repository.AddSubjectRepository;
 import th.ac.tu.cs.services.repository.DropSubjectRepository;
-//import th.ac.tu.cs.services.repository.JdbcStudentRepository;
-//import th.ac.tu.cs.services.repository.JdbcSubjectRepository;
 import th.ac.tu.cs.services.repository.RequestRepository;
 import th.ac.tu.cs.services.repository.StudentRepository;
 
-import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;

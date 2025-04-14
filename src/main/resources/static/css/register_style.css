@@ -84,12 +84,13 @@ span{
 
 .butt{
     font-size: 20px;
-    width: 100px;
+    width: auto;
     height: 50px;
     background-color: dodgerblue;
     color: aliceblue;
     border-color:aliceblue ;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .butt:hover{
