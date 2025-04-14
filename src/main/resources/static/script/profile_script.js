@@ -43,9 +43,9 @@ async function fetchUserData() {
         const imagefile = await response_profile.blob();
         console.log(imagefile)
         const imageUrl = URL.createObjectURL(imagefile);
-        document.getElementById("profile-bar").src = imageUrl;
+        profileImage.src = imageUrl;
     }else{
-        document.getElementById("profile-bar").src = '/picture/user.png';
+        profileImage.src = '/picture/user.png';
     }
 
         
