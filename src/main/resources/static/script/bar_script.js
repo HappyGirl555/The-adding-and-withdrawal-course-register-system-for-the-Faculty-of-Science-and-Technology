@@ -47,11 +47,15 @@ fetch('http://localhost:4004/api/info',
         {
              method: "GET",
         }).then(async response => {
-            const imagefile = await response.blob()
-        
-            if(imagefile){
-                const imageUrl = URL.createObjectURL(imagefile)
-                document.getElementById("profile-bar").src = imageUrl
+            const contentType = response.headers.get("Content-Type");
+            
+            if (contentType && contentType.startsWith("image/")) {
+                console.log("goo")
+                const imagefile = await response.blob();
+                console.log(imagefile)
+                const imageUrl = URL.createObjectURL(imagefile);
+                document.getElementById("profile-bar").src = imageUrl;
+            }else{
+                document.getElementById("profile-bar").src = '/picture/user.png';
             }
-
     })
