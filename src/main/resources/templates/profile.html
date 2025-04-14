@@ -1,22 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"  href="/css/request_style.css">
-    <link rel="stylesheet"  href="/css/bar.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile_style.css">
+    <link rel="stylesheet" href="/css/bar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
-    <script src = "/script/request_script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
     <script src = "/script/bar_script.js" defer></script>
-    <title>ผลการลงทะเบียนเพิ่ม-ถอน</title>
+    <script src = "/script/profile_script.js" defer></script>
+    <title>คำร้องขอเพิ่มถอนรายวิชา</title>
 </head>
 <body>
     <div class="bar">
         <div class="container">
             <div class="logobox">
-                <img src="/picture/logo_sci.png" class="logo">
+                <img src="./picture/logo_sci.png" class="logo">
                 <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์</h2>
             </div>
             <div class="menu-bar">
@@ -36,30 +37,32 @@
                         <form action="/logout" method="post">
                             <button id="butt-logout" class="butt-menu">ออกจากระบบ</button>
                         </form>
-                    </div>
+                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="box">
-        <div class = "head-text">
-            <h1>รายการเพิ่ม-ถอนรายวิชาคณะวิทยาศาสตร์และเทคโนโลยี</h1>
+        <div class="head-text">
+            <h1>ข้อมูลโปรไฟล์</h1>
         </div>
-        <div id= "add-box" class="result-table">
-            <div class="head-sub-text">
-                <h3>รายการเพิ่มรายวิชา</h3>
+        <hr>
+        <div id="info-box" class="info-box">
+            <div id="img_pf">
+                <form action="/info/picture" method="post" enctype="multipart/form-data">
+                    <div class="image-wrapper">
+                        <img src="/picture/user.png" alt="รูปโปรไฟล์" id="profile-image" >
+                    </div>
+                    <input type="file" id="image-input" name="image" accept="image/*" style="display: none;">
+                </form>
             </div>
+            <div id="info-describe">
+                
+            </div>
+        </div>
         
-            <div id="add-table-box"></div>
-        </div>
-
-        <div id= "drop-box" class="result-table">
-            <div class="head-sub-text">
-                <h3>รายการถอนรายวิชา</h3>
-            </div>
-            <div id="drop-table-box"></div>
-        </div>
 
     </div>
 </body>
 </html>
+

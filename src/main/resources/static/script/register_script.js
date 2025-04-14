@@ -47,53 +47,56 @@ const getDate = () =>{
     return date.toISOString().split('T')[0]
 }
 
-
 function addSubjectInputs() {
     const subAll = document.getElementById("addtable")
     const sub = document.createElement("div");
-    const len_div = subAll.querySelectorAll("div").length;
+    sub.classList.add("sub-div")
+    const len_div = subAll.querySelectorAll(".sub-div").length;
     if (len_div>=10){
         alert("เพิ่มวิชาได้สูงสุด 10 วิชา");
     }else{
 
        sub.innerHTML =
         `
-         <table class = "sub-table">
-            <tr id="header_add_table">
-                <th class="th_header_subject">วิชาที่</th>
-                <th class="th_header_subject_Code">รหัสวิชา</th>
-                <th class="th_header_subject_Name">ชื่อวิชา</th>
-                <th class="th_header_subject_Section">Section</th>
-                <th class="th_header_subject_Date">วัน/เวลา </th>
-                <th class="th_header_subject_Credit">หน่วยกิต</th>
-                <th class="th_header_subject_Teacher">ชื่อผู้สอน</th>
-            </tr>
-            <tr id="body_table">
-                <th class="th_subject"><p id="No">${len_div+1}</p></th>
-                <th class="th_subject"><input id="subject_code${len_div+1}" class="subjectCode" ></th>
-                <th class="th_subject"><input id="subject_name${len_div+1}" class="subjectName" ></th>
-                <th class="th_subject"><input id="subject_sec${len_div+1}" class="subjectSection"  ></th>
-                <th class="th_subject"><input id="subject_date${len_div+1}" class="subjectDate" ></th>
-                <th class="th_subject"><input id="subject_credit${len_div+1}" class="subjectCredit" type=number min=1 max=3 ></th>
-                <th class="th_subject"><input id="subject_teacher${len_div+1}" class="subjectTeacher" ></th>
-
-            </tr>
-        </table>
-        <table id="case-table">
-                <tr><th>เหตุผลการเพิ่มรายวิชา<span>*</span></th></tr>
-                <tr><th><input id="subject_cause${len_div+1}" class="subjectCause"></th></tr>
-        </table>
-        <br>
-        <button onclick="cancleAddSubject(this)" type="button" id="cancle" class="cancle" >ยกเลิก</button>
+        <div>
+            <div style="display: flex; justify-content:flex-start; align-items:center; gap:10px">
+                <p style="color:purple text-decorat" class="num_sub"><strong>เพิ่มรายวิชาที่ ${len_div+1}</strong></p>
+                <p><strong>รหัสวิชา</strong></p>
+                <input id="subject_code${len_div+1}" style="width:100px; height:30px; border: 0px;  padding: 1px 5px 1px 5px;">
+                <p><strong>ชื่อวิชา</strong></p>
+                <input id="subject_name${len_div+1}"style="width:250px; height:30px; border: 0px;  padding: 1px 5px 1px 5px;">
+            </div>
+            <div style="display: flex; justify-content:flex-start; align-items:center; gap:10px" > 
+                <p><strong>Section</strong></p>
+                <input id="subject_sec${len_div+1}" style="width:150px; height:30px; border: 0px; padding: 1px 5px 1px 5px;" >          
+                <p><strong>วัน/เวลา</strong></p>
+                <input id="subject_date${len_div+1}" style="width:170px; height:30px; border: 0px; padding: 1px 5px 1px 5px;">
+                    
+            </div>
+            <div style="display: flex; justify-content:flex-start; align-items:center; gap:10px">
+                <p><strong>หน่วยกิต </strong></p>
+                <input id="subject_credit${len_div+1}"type=number min=1 max=3 style="width:100px; height:30px; border: 0px; padding: 1px 5px 1px 5px;"> 
+                <p><strong>ชื่อผู้สอน</strong></p>
+                <input id="subject_teacher${len_div+1}" style="width:270px; height:30px; border: 0px; padding: 1px 5px 1px 5px;">
+            </div>    
+            <div style="text-align:left;">
+                <p><strong>เหตุผลการเพิ่มรายวิชา </strong></p>
+                <input id="subject_cause${len_div+1}" style="width:100%; height:50px; border: 0px;padding: 1px 5px 1px 5px;">
+            </div>
+        </div>                  
+        <div>
+            <button onclick="cancleAddSubject(this)" type="button" id="cancle" class="cancle" >ยกเลิก</button>
+        </div>
         `
-        sub.classList.add("addtable")
+        sub.id = `sub-addtable${len_div + 1}`;
         subAll.appendChild(sub)
     } 
 }
 
+
 function drop_addSubjectInputs() {
     const newtable = document.getElementById("addtable")
-    const all_sub = newtable.querySelectorAll("div");
+    const all_sub = newtable.querySelectorAll(".sub-div");
     const len_sub = all_sub.length
     if(len_sub>0){
         newtable.removeChild(all_sub[len_sub-1]);
@@ -102,68 +105,71 @@ function drop_addSubjectInputs() {
 
 function cancleAddSubject(button){
     const table = document.getElementById("addtable")
-    const all_sub = table.querySelectorAll("div");
+    const all_sub = table.querySelectorAll(".sub-div");
     const len_sub = all_sub.length
-    const cansub = button.parentElement;
-    const index = cansub.querySelector("table").rows[1].cells[0].textContent;
+    const cansub = button.parentElement.parentElement;
+    const index = parseInt(cansub.id.slice(12));
     table.removeChild(all_sub[index-1]);
 
     if (index != len_sub){
         for (var i = index-1 ; i < all_sub.length ; i++){
-            var ctable = table.querySelectorAll("div")[i].querySelector("table");
-            ctable.rows[1].cells[0].textContent = (i+1) ;
+            var ctable = table.querySelectorAll(".sub-div")[i];
+            ctable.querySelector(".num_sub").innerHTML = `<strong>เพิ่มรายวิชาที่ ${i + 1}</strong>`;
+            ctable.id = `sub-addtable${i + 1}`; ;
         }
     }
 }
 
-
-
 function dropSubjectInputs() {
     const subAll = document.getElementById("droptable")
     const sub = document.createElement("div");
-    const len_div = subAll.querySelectorAll("div").length;
+    sub.classList.add("sub-div")
+    const len_div = subAll.querySelectorAll(".sub-div").length;
     if (len_div>=10){
         alert("เพิ่มวิชาได้สูงสุด 10 วิชา");
     }else{
 
-       sub.innerHTML =
-        `
-        <table class="sub-table">
-            <tr id="header_drop_table">
-                <th class="th_header_subject">วิชาที่</th>
-                <th class="th_header_subject_Code">รหัสวิชา</th>
-                <th class="th_header_subject_Name">ชื่อวิชา</th>
-                <th class="th_header_subject_Section">Section</th>
-                <th class="th_header_subject_Date">วัน/เวลา </th>
-                <th class="th_header_subject_Credit">หน่วยกิต</th>
-                <th class="th_header_subject_Teacher">ชื่อผู้สอน</th>
-            </tr>
-            <tr id="body_table">
-                <th class="th_subject"><p id="No">${len_div+1}</p></th>
-                <th class="th_subject"><input id="subject_code${len_div+1}" class="subjectCode" ></th>
-                <th class="th_subject"><input id="subject_name${len_div+1}" class="subjectName" ></th>
-                <th class="th_subject"><input id="subject_sec${len_div+1}" class="subjectSection"  ></th>
-                <th class="th_subject"><input id="subject_date${len_div+1}" class="subjectDate" ></th>
-                <th class="th_subject"><input id="subject_credit${len_div+1}" class="subjectCredit" type=number min=1 max=3 ></th>
-                <th class="th_subject"><input id="subject_teacher${len_div+1}" class="subjectTeacher" ></th>
-                
-            </tr>
-        </table>
-        <table id="case-table">
-                <tr><th>เหตุผลการถอนรายวิชา<span>*</span></th></tr>
-                <tr><th><input id="subject_cause${len_div+1}" class="subjectCause"></th></tr>
-        </table>
-        <br>
-        <button onclick="cancleDropSubject(this)" type="button" id="cancle" class="cancle" >ยกเลิก</button>
-        `
-        sub.classList.add("droptable")
-        subAll.appendChild(sub)
-    } 
-}
+        sub.innerHTML =
+         `
+         <div>
+             <div style="display: flex; justify-content:flex-start; align-items:center; gap:10px">
+                 <p style="color:purple text-decorat" class="num_sub"><strong>ถอนรายวิชาที่ ${len_div+1}</strong></p>
+                 <p><strong>รหัสวิชา</strong></p>
+                 <input id="subject_code${len_div+1}" style="width:100px; height:30px; border: 0px;  padding: 1px 5px 1px 5px;">
+                 <p><strong>ชื่อวิชา</strong></p>
+                 <input id="subject_name${len_div+1}"style="width:250px; height:30px; border: 0px;  padding: 1px 5px 1px 5px;">
+             </div>
+             <div style="display: flex; justify-content:flex-start; align-items:center; gap:10px" > 
+                 <p><strong>Section</strong></p>
+                 <input id="subject_sec${len_div+1}" style="width:150px; height:30px; border: 0px; padding: 1px 5px 1px 5px;" >          
+                 <p><strong>วัน/เวลา</strong></p>
+                 <input id="subject_date${len_div+1}" style="width:170px; height:30px; border: 0px; padding: 1px 5px 1px 5px;">
+                     
+             </div>
+             <div style="display: flex; justify-content:flex-start; align-items:center; gap:10px">
+                 <p><strong>หน่วยกิต </strong></p>
+                 <input id="subject_credit${len_div+1}"type=number min=1 max=3 style="width:100px; height:30px; border: 0px; padding: 1px 5px 1px 5px;"> 
+                 <p><strong>ชื่อผู้สอน</strong></p>
+                 <input id="subject_teacher${len_div+1}" style="width:270px; height:30px; border: 0px; padding: 1px 5px 1px 5px;">
+             </div>    
+             <div style="text-align:left;">
+                 <p><strong>เหตุผลการเพิ่มรายวิชา </strong></p>
+                 <input id="subject_cause${len_div+1}" style="width:100%; height:50px; border: 0px;padding: 1px 5px 1px 5px;">
+             </div>
+         </div>                  
+         <div>
+             <button onclick="cancleDropSubject(this)" type="button" id="cancle" class="cancle" >ยกเลิก</button>
+         </div>
+         `
+         sub.id = `sub-droptable${len_div + 1}`;
+         subAll.appendChild(sub)
+     } 
+ }
+
 
 function drop_dropSubjectInputs() {
     const newtable = document.getElementById("droptable")
-    const all_sub = newtable.querySelectorAll("div");
+    const all_sub = newtable.querySelectorAll(".sub-div");
     const len_sub = all_sub.length
     if(len_sub>0){
         newtable.removeChild(all_sub[len_sub-1]);
@@ -172,16 +178,17 @@ function drop_dropSubjectInputs() {
 
 function cancleDropSubject(button){
     const table = document.getElementById("droptable")
-    const all_sub = table.querySelectorAll("div");
+    const all_sub = table.querySelectorAll(".sub-div");
     const len_sub = all_sub.length
-    const cansub = button.parentElement;
-    const index = cansub.querySelector("table").rows[1].cells[0].textContent;
+    const cansub = button.parentElement.parentElement;
+    const index = parseInt(cansub.id.slice(13));
     table.removeChild(all_sub[index-1]);
-
+    
     if (index != len_sub){
         for (var i = index-1 ; i < all_sub.length ; i++){
-            var ctable = table.querySelectorAll("div")[i].querySelector("table");
-            ctable.rows[1].cells[0].textContent = (i+1) ;
+            var ctable = table.querySelectorAll(".sub-div")[i];
+            ctable.querySelector(".num_sub").innerHTML = `<strong>ถอนรายวิชาที่ ${i + 1}</strong>`;
+            ctable.id = `sub-droptable${i + 1}`; ;
         }
     }
 }
@@ -226,7 +233,7 @@ const checkValidNumber = (elm,number) => {
 
 
 const checkSubject = (idTable) => {
-    var subjects = idTable.querySelectorAll('div')
+    var subjects = idTable.querySelectorAll('.sub-div')
     subjects.forEach((subject,index)=>{
         var i = 0
         var subjectCode = subject.querySelector(`#subject_code${index+1}`)
@@ -254,7 +261,7 @@ const checkSubject = (idTable) => {
 
 const saveSubject = (idTable) => {
     var subjects = []
-    var subjectsInput = idTable.querySelectorAll('div')
+    var subjectsInput = idTable.querySelectorAll('.sub-div')
     subjectsInput.forEach((subject,index)=>{
         subjects.push({
             subject_code : subject.querySelector(`#subject_code${index+1}`).value,
@@ -314,7 +321,9 @@ const validateInfo = () =>{
 const validateSubject = () => {
     var addsubject = document.getElementById("addtable")
     var dropsubject = document.getElementById("droptable")
-    if(addsubject.querySelectorAll("div").length === 0 && dropsubject.querySelectorAll("div").length === 0){
+    var check_add = checkSubject(addsubject)
+    var check_drop =checkSubject(dropsubject)
+    if(addsubject.querySelectorAll(".sub-div").length === 0 && dropsubject.querySelectorAll(".sub-div").length === 0){
         const control_row1 = addtable.parentElement.querySelector("div");
         const errorDisplay1 = control_row1.querySelector(".error_table")
         errorDisplay1.innerHTML = "กรุณากรอกรายละเอียดเพิ่มรายวิชา"
@@ -322,7 +331,7 @@ const validateSubject = () => {
         const errorDisplay2 = control_row2.querySelector(".error_table")
         errorDisplay2.innerHTML = "กรุณากรอกรายละเอียดถอนรายวิชา"
         return false
-    }else if(checkSubject(addsubject) && checkSubject(dropsubject)){
+    }else if(check_add && check_drop){
         const control_row1 = addtable.parentElement.querySelector("div");
         const errorDisplay1 = control_row1.querySelector(".error_table")
         errorDisplay1.innerHTML = ""

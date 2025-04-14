@@ -16,4 +16,7 @@ public interface DropSubjectRepository extends JpaRepository<DropSubject, Long> 
 
     @Query("SELECT d FROM DropSubject d JOIN d.request r WHERE r.studentid  = :username")
     List<DropSubject> findbyUsername(@Param("username") String username);
+/*
+    @Query("SELECT d, r FROM DropSubject d JOIN d.request r WHERE r.reqid = :reqid AND d.dropid = :id")
+    List <?> findRequestAndDropSubject(@Param("reqid") String reqid, @Param("id") Long id);*/
 }

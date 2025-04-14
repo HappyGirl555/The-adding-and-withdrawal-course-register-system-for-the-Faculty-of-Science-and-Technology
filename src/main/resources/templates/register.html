@@ -17,20 +17,21 @@
     <div class="bar">
         <div class="container">
             <div class="logobox">
-                <img src="./picture/logo-sci.png" class="logo">
+                <img src="./picture/logo_sci.png" class="logo">
                 <h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์</h2>
             </div>
             <div class="menu-bar">
                 <div class="menu">
+                    <button id="butt-home" class="butt-menu" >หน้าหลัก</button>
                     <button id="butt-register" class="butt-menu">ลงทะเบียนเพิ่ม-ถอน</button>
-                    <button id="butt-result" class="butt-menu" onclick="window.location.href='./request'">ผลการลงทะเบียน</button>
+                    <button id="butt-result" class="butt-menu" >ผลการลงทะเบียน</button>
                 </div>
                 <div class="user">
                     <div class="name-text">
                         <h4 id="user-name"></h4>
                     </div>
                     <div class="pf-pic">
-                        <img src="/picture/user.png" class="user-pic">
+                        <img src="/picture/user.png" class="user-pic" id="profile-bar">
                     </div>
                     <div class="logout-butt">
                         <form action="/logout" method="post">

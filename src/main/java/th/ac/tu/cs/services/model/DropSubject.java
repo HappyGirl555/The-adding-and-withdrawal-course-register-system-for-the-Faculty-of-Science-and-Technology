@@ -30,6 +30,9 @@ public class DropSubject {
     private String subject_cause;
     private Boolean subject_teacher_check;
 
+    @Transient
+    private String reqid;
+
     public DropSubject() {
 
     }
@@ -49,7 +52,32 @@ public class DropSubject {
         this.subject_teacher_check=subject_teacher_check;
     }
 
+    public DropSubject(Long dropid,String date, Request request, String subject_code, String subject_name, String subject_sec, String subject_date, String subject_credit,
+                      String subject_teacher, String subject_cause, Boolean subject_teacher_check){
+        this.dropid = dropid;
+        this.date = date;
+        this.request = request;
+        this.subject_code=subject_code;
+        this.subject_name=subject_name;
+        this.subject_sec=subject_sec;
+        this.subject_date=subject_date;
+        this.subject_credit=subject_credit;
+        this.subject_teacher=subject_teacher;
+        this.subject_cause = subject_cause;
+        this.subject_teacher_check=subject_teacher_check;
+    }
 
+    public String getReqid() {
+        return reqid;
+    }
+
+    public void setReqid(String reqid) {
+        this.reqid = reqid;
+    }
+
+    public Long getDropid() {
+        return dropid;
+    }
 
     public String getDate() {
         return date;

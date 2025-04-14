@@ -35,7 +35,6 @@ public class Request {
     private List <DropSubject> dropSubjectList;
     private String time;
 
-
     public Request(String date, String prefix, String firstname, String lastname, String studentid,
                    String year, String department, String advisor, String address_number, String  moo,
                    String tumbol, String amphur, String province, String postalCode, String mobile_phone,
@@ -59,6 +58,8 @@ public class Request {
         this.addSubjectList = addSubjectList;
         this.dropSubjectList = dropSubjectList;
     };
+
+
 
     public Request(String date,String time, String prefix, String firstname, String lastname, String studentid,
                    String year, String department, String advisor, String address_number, String  moo,

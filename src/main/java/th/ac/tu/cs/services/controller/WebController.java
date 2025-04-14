@@ -31,5 +31,17 @@ public class WebController {
         return "sign_up";
     }
 
+    @GetMapping("/home")
+    public String homePage(){ return "home"; }
+
+    @GetMapping("/profile")
+    public String profilePage(){ return "profile"; }
+
+    @GetMapping("/request/add/{reqid}/{id}")
+    public String descriptionRequestAddSubjectPage(){ return "request_id";}
+
+    @GetMapping("/request/drop/{reqid}/{id}")
+    public String descriptionRequestDropSubjectPage(){ return "request_id";}
+
 }
 

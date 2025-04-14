@@ -8,6 +8,21 @@ register.addEventListener("click", () =>{
     window.location.href = `/register`
 });
 
+const home = document.getElementById("butt-home");
+home.addEventListener("click", () =>{
+    window.location.href = `/home`
+});
+
+const profile = document.getElementById("profile-bar");
+profile.addEventListener("click", () =>{
+    window.location.href = '/profile'
+});
+
+const currentPath = window.location.pathname;
+if (currentPath.startsWith("/")) {
+    document.querySelector(".box").classList.add("show");
+} 
+
 fetch('http://localhost:4004/api/info',
    {
         method: "GET",
@@ -23,6 +38,20 @@ fetch('http://localhost:4004/api/info',
               throw new Error("Failed Up data")
           }
     }).then(student => {
-           console.log(student)
-            document.getElementById("user-name").textContent = student.prefix+student.firstname+" "+student.lastname
+        console.log(student)
+        document.getElementById("user-name").textContent = student.prefix+student.firstname+" "+student.lastname
+    })
+
+    
+    fetch('http://localhost:4004/api/info/picture',
+        {
+             method: "GET",
+        }).then(async response => {
+            const imagefile = await response.blob()
+        
+            if(imagefile){
+                const imageUrl = URL.createObjectURL(imagefile)
+                document.getElementById("profile-bar").src = imageUrl
+            }
+
     })

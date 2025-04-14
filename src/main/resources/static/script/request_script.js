@@ -1,5 +1,6 @@
 
 
+
 const dateFormatted = (i) => {
     var date = new Date(i)
     const formattedDate = date.toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric'})
@@ -44,6 +45,7 @@ fetch(`http://localhost:4004/api/request/add`,
                         <th class="credit-con">หน่วยกิต</th>
                         <th class="teacher-con">ชื่อผู้สอน</th>
                         <th class="status-con">สถานะ</th>
+                        <th class="scode-con">รายละเอียด<br>เพิ่มเติม</th>
                     </tr>
                 </thead>
                 <tbody id="add-content"> </tbody>
@@ -61,6 +63,7 @@ fetch(`http://localhost:4004/api/request/add`,
                 <td class="center-text">${subject.subject_credit}</td>
                 <td class="center-text">${subject.subject_teacher}</td>
                 <td class="center-text ${subject.subject_teacher_check ? 'check-success' : 'check-unsuccess'}">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
+                <td class="center-text"><a href="/request/add/${subject.reqid}/${subject.addid}">เพิ่มเติม</a></td>
                 `
                 add_content.appendChild(row)
             })
@@ -110,6 +113,7 @@ fetch(`http://localhost:4004/api/request/drop`,
                         <th class="credit-con">หน่วยกิต</th>
                         <th class="teacher-con">ชื่อผู้สอน</th>
                         <th class="status-con">สถานะ</th>
+                        <th class="scode-con">รายละเอียด<br>เพิ่มเติม</th>
                     </tr>
                  </thead>
                  <tbody id="drop-content"> </tbody>
@@ -129,6 +133,7 @@ fetch(`http://localhost:4004/api/request/drop`,
                 <td class="center-text">${subject.subject_credit}</td>
                 <td class="center-text">${subject.subject_teacher}</td>
                 <td class="center-text ${subject.subject_teacher_check ? 'check-success' : 'check-unsuccess'}">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
+                 <td class="center-text"><a href="/request/drop/${subject.reqid}/${subject.dropid}">เพิ่มเติม</a></td>
                 `
                 drop_content.appendChild(row)
             })

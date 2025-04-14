@@ -30,11 +30,14 @@ public class AddSubject {
     private String subject_cause;
     private Boolean subject_teacher_check;
 
+    @Transient
+    private String reqid;
+
     public AddSubject() {
 
     }
 
-    public AddSubject(  String date, Request request, String subject_code, String subject_name, String subject_sec, String subject_date, String subject_credit,
+    public AddSubject(String date, Request request, String subject_code, String subject_name, String subject_sec, String subject_date, String subject_credit,
                        String subject_teacher, String subject_cause, Boolean subject_teacher_check){
         this.date = date;
         this.request = request;
@@ -48,7 +51,31 @@ public class AddSubject {
         this.subject_teacher_check=subject_teacher_check;
     }
 
+    public AddSubject(Long addid,String date, Request request, String subject_code, String subject_name, String subject_sec, String subject_date, String subject_credit,
+                      String subject_teacher, String subject_cause, Boolean subject_teacher_check){
+        this.addid = addid;
+        this.date = date;
+        this.subject_code=subject_code;
+        this.subject_name=subject_name;
+        this.subject_sec=subject_sec;
+        this.subject_date=subject_date;
+        this.subject_credit=subject_credit;
+        this.subject_teacher=subject_teacher;
+        this.subject_cause = subject_cause;
+        this.subject_teacher_check=subject_teacher_check;
+    }
 
+    public String getReqid() {
+        return reqid;
+    }
+
+    public void setReqid(String reqid) {
+        this.reqid = reqid;
+    }
+
+    public Long getAddid() {
+        return addid;
+    }
 
     public String getDate() {
         return date;
@@ -141,7 +168,7 @@ public class AddSubject {
 
     public void print() {
         System.out.println(date);
-       // System.out.println(reqid);
+        System.out.println(reqid);
         System.out.println(subject_name);
         System.out.println(subject_sec);
         System.out.println(subject_code);

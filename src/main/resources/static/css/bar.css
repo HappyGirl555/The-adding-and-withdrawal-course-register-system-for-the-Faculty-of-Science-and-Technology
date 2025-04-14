@@ -64,8 +64,10 @@
 }
 
 .user .user-pic{
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
+    clip-path: circle(45%); 
+    object-fit: cover;
 }
 
 
@@ -105,4 +107,8 @@
     border: 0px;
     font-family: 'Noto Sans Thai', sans-serif;
     font-weight: bold;
+}
+
+.user-pic:hover{
+    cursor: pointer;
 }

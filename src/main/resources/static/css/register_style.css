@@ -22,6 +22,12 @@ body{
     margin-top: 100px;
     margin-bottom: 100px;
     border-radius: 50px;
+    transform: translateY(100%);
+    transition: transform 0.6s ease-in-out; 
+}
+
+.box.show {
+    transform: translateY(0); 
 }
 
 
@@ -98,111 +104,9 @@ span{
     width: 100px;
     height: 30px;
 }
-.add{
-    margin-top: 20px;
-}
 
-.drop{
-    margin-top: 20px;
-}
 
-.sub-table{
-    border-collapse: collapse;
-}
 
-.subject-Inputs{
-    float: left;
-    text-align: center;
-    width:80px;
-    height:30px;
-    margin-right: 18px;
-}
-
-#header_add_table{
-    background-color: rgb(150, 76, 161);
-}
-
-#header_drop_table{
-    background-color: rgb(50, 76, 161);
-}
-
-.th_header_subject{
-    margin: auto;
-    padding: 8px;
-    text-align: center;
-    color:aliceblue;
-}
-
-.th_header_subject_Code{
-    width: 70px;
-    height: 30px;
-    margin: auto;
-    padding: 8px;
-    color:aliceblue;
-    text-align: center;
-}
-
-.th_header_subject_Name{
-    width: 150px;
-    height: 30px;
-    margin: auto;
-    padding: 8px;
-    color:aliceblue;
-    text-align: center;
-}
-
-.th_header_subject_Section{
-    width: 70px;
-    height: 30px;
-    margin: auto;
-    padding: 8px;
-    color:aliceblue;
-    text-align: center;
-}
-
-.th_header_subject_Date{
-    width: 100px;
-    height: 30px;
-    margin: auto;
-    padding: 8px;
-    color:aliceblue;
-    text-align: center;
-}
-
-.th_header_subject_Credit{
-    width: 70px;
-    height: 30px;
-    margin: auto;
-    padding: 8px;
-    color:aliceblue;
-    text-align: center;
-}
-
-.th_header_subject_Teacher{
-    width: 150px;
-    height: 30px;
-    margin: auto;
-    padding: 8px;
-    color:aliceblue;
-    text-align: center;
-}
-
-.th_subject{
-    margin: auto;
-    padding: 8px;
-    text-align: center;
-    color:rgb(5, 39, 68);
-    background-color: rgb(255, 255, 255);
-    
-}
-
-.th_subject1{
-    width: 70px;
-    height: 30px;
-    margin: 0;
-    padding: 8px;
-    text-align: center;
-}
 
 .cancle{
     font-size: 17px;
@@ -241,54 +145,6 @@ span{
     cursor: pointer;
 }
 
-.addSubject {
-    margin-top : 300 px;
-}
-
-
-
-.addSubjectName{
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(216, 216, 216);
-}
-
-.subjectCode{
-    margin: 0;
-    width: 60px;
-    height: 30px;
-}
-
-.subjectName{
-    margin: 0;
-    width: 150px;
-    height: 30px;
-}
-
-.subjectSection{
-    margin: 0;
-    width: 70px;
-    height: 30px;
-}
-
-.subjectCredit{
-    margin: 0;
-    width: 50px;
-    height: 30px;
-}
-
-.subjectDate{
-    margin: 0;
-    width: 80px;
-    height: 30px;
-}
-
-.subjectTeacher{
-    margin: 0;
-    width: 150px;
-    height: 30px;
-}
 
 
 input{
@@ -363,13 +219,34 @@ option {
     
 }
 
-.addtable{
+.sub-div{
+    display: grid;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    grid-template-rows: auto auto;
+    gap: 10px;
     padding: 20px;
-    margin: auto;
-    margin-bottom: 20px;
-    background-color: rgba(88, 54, 112, 0.29);
+    margin: auto auto 20px auto;
     border-radius: 10px;
+    width: 670px;
+    box-sizing: border-box;
+}
+
+#droptable .num_sub{
+    color: rgb(122, 53, 0);
+}
+
+#addtable .num_sub{
+    color: rgb(148, 127, 20);
+}
+
+#droptable .sub-div{
+    background-color: rgba(255, 161, 89, 0.493);
+}
+
+#addtable .sub-div{
+    background-color: rgba(213, 189, 68, 0.29);
 }
 
 .droptable{
