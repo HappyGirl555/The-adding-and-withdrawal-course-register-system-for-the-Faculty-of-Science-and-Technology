@@ -38,10 +38,10 @@ public class WebController {
     public String profilePage(){ return "profile"; }
 
     @GetMapping("/request/add/{reqid}/{id}")
-    public String descriptionRequestAddSubjectPage(){ return "request_id";}
+    public String descriptionRequestAddSubjectPage(){ return "request_description";}
 
     @GetMapping("/request/drop/{reqid}/{id}")
-    public String descriptionRequestDropSubjectPage(){ return "request_id";}
+    public String descriptionRequestDropSubjectPage(){ return "request_description";}
 
 }
 
