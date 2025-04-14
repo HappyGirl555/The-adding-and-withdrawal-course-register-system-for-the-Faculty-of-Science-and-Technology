@@ -139,11 +139,12 @@ table{
 
 a{
     text-decoration: none;
-    color: black
+    color: rgb(71, 23, 70);
+    font-weight: bold;
 }
 
 a:hover{
     text-decoration: none;
-    color: rgb(144, 108, 23)
+    color: rgb(201, 164, 79)
 }
 

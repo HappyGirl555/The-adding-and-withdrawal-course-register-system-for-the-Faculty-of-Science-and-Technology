@@ -112,10 +112,17 @@ function cancleAddSubject(button){
     table.removeChild(all_sub[index-1]);
 
     if (index != len_sub){
-        for (var i = index-1 ; i < all_sub.length ; i++){
+        for (var i = index-1 ; i < table.querySelectorAll(".sub-div").length ; i++){
             var ctable = table.querySelectorAll(".sub-div")[i];
             ctable.querySelector(".num_sub").innerHTML = `<strong>เพิ่มรายวิชาที่ ${i + 1}</strong>`;
-            ctable.id = `sub-addtable${i + 1}`; ;
+            ctable.id = `sub-addtable${i + 1}`;
+            ctable.querySelector(`#subject_code${i+2}`).id = `subject_code${i+1}`
+            ctable.querySelector(`#subject_name${i+2}`).id = `subject_name${i+1}`
+            ctable.querySelector(`#subject_sec${i+2}`).id = `subject_sec${i+1}`
+            ctable.querySelector(`#subject_date${i+2}`).id = `subject_date${i+1}`
+            ctable.querySelector(`#subject_credit${i+2}`).id = `subject_credit${i+1}`
+            ctable.querySelector(`#subject_teacher${i+2}`).id = `subject_teacher${i+1}`
+            ctable.querySelector(`#subject_cause${i+2}`).id = `subject_cause${i+1}`
         }
     }
 }
@@ -185,10 +192,17 @@ function cancleDropSubject(button){
     table.removeChild(all_sub[index-1]);
     
     if (index != len_sub){
-        for (var i = index-1 ; i < all_sub.length ; i++){
+        for (var i = index-1 ; i < table.querySelectorAll(".sub-div").length ; i++){
             var ctable = table.querySelectorAll(".sub-div")[i];
             ctable.querySelector(".num_sub").innerHTML = `<strong>ถอนรายวิชาที่ ${i + 1}</strong>`;
-            ctable.id = `sub-droptable${i + 1}`; ;
+            ctable.id = `sub-droptable${i + 1}`; 
+            ctable.querySelector(`#subject_code${i+2}`).id = `subject_code${i+1}`
+            ctable.querySelector(`#subject_name${i+2}`).id = `subject_name${i+1}`
+            ctable.querySelector(`#subject_sec${i+2}`).id = `subject_sec${i+1}`
+            ctable.querySelector(`#subject_date${i+2}`).id = `subject_date${i+1}`
+            ctable.querySelector(`#subject_credit${i+2}`).id = `subject_credit${i+1}`
+            ctable.querySelector(`#subject_teacher${i+2}`).id = `subject_teacher${i+1}`
+            ctable.querySelector(`#subject_cause${i+2}`).id = `subject_cause${i+1}`
         }
     }
 }

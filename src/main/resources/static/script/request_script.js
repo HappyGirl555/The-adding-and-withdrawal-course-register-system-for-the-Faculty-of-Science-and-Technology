@@ -63,7 +63,7 @@ fetch(`http://localhost:4004/api/request/add`,
                 <td class="center-text">${subject.subject_credit}</td>
                 <td class="center-text">${subject.subject_teacher}</td>
                 <td class="center-text ${subject.subject_teacher_check ? 'check-success' : 'check-unsuccess'}">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
-                <td class="center-text"><a href="/request/add/${subject.reqid}/${subject.addid}">เพิ่มเติม</a></td>
+                <td class="center-text"><a href="/request/add/${subject.reqid}/${subject.addid}">รายละเอียด</a></td>
                 `
                 add_content.appendChild(row)
             })
@@ -133,7 +133,7 @@ fetch(`http://localhost:4004/api/request/drop`,
                 <td class="center-text">${subject.subject_credit}</td>
                 <td class="center-text">${subject.subject_teacher}</td>
                 <td class="center-text ${subject.subject_teacher_check ? 'check-success' : 'check-unsuccess'}">${subject.subject_teacher_check ? 'เสร็จสิ้น' : 'รอดำเนินการ'}</td>
-                 <td class="center-text"><a href="/request/drop/${subject.reqid}/${subject.dropid}">เพิ่มเติม</a></td>
+                 <td class="center-text"><a href="/request/drop/${subject.reqid}/${subject.dropid}">รายละเอียด</a></td>
                 `
                 drop_content.appendChild(row)
             })
