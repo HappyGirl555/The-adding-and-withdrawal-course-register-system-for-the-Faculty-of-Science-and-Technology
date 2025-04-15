@@ -1,9 +1,5 @@
 body{
     margin: 0;
-    /*background-image:url('TU.jpg');
-    background-attachment: fixed;
-    background-size:cover;
-    background-position: center;*/
     font-family: 'Noto Sans Thai', sans-serif;
     background-color: #ededed;
 }
@@ -33,8 +29,13 @@ body{
 
 .input_info{
     width: 200px;
-    height: 30px;
+    height: 35px;
+    border: 1px solid #3e3e3e;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-size: 16px;
 }
+
+
 table{
     width: 100%;
 }
@@ -107,8 +108,6 @@ span{
 }
 
 
-
-
 .cancle{
     font-size: 17px;
     margin: 0;
@@ -150,13 +149,15 @@ span{
 
 input{
     border-radius: 5px ;
-
-    border: 1px solid #7e5f38;
+    font-family: 'Noto Sans Thai', sans-serif;
+    padding: auto;
+    box-sizing: border-box;
 }
 
 input:focus{
     outline:  0;
     border: 2px solid #140086;
+    background-color: #f4f4f4;
 }
 
 .success input{
@@ -285,30 +286,3 @@ option {
     border-radius : 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
 }
-
-  /*
-    align-items: center;
-    justify-content: center;
-
-   */
-/*
-.popup{
-    align-items: center;
-    justify-content: center;
-}
-
-.popup .overlay{
-    display:fixed;
-    top: 0px;
-    left: 0px;
-    width:100vw;
-    Height:100vh;
-    background-color:rgba(207, 0, 0, 0.7);
-}
-
-
-.success-image{
-    margin-top : 40px;
-    width : 200px;
-    height : 200px;
-}*/

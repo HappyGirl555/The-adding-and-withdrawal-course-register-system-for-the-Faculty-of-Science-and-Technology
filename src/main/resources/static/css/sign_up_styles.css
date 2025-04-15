@@ -1,9 +1,4 @@
 body{
-    /*background-image:url('TU.jpg');
-
-
-    background-position: center;*/
-    
     display: flex;
     justify-content: center; 
     align-items: center;

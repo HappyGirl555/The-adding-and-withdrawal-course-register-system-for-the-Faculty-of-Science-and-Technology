@@ -1,6 +1,5 @@
 var list_addSubject=[];
 var list_dropSubject=[];
-
 var date
 var prefix
 var firstname
@@ -17,6 +16,98 @@ var province
 var postalcode
 var mobile_phone
 var phone
+
+//เก็บข้อมูลจังหวัดในประเทศไทย
+let rawAddress = [];
+
+//เพิ่มตัวเลือกจังหวัด
+var provinceSelect = document.getElementById("province")
+fetch('/script/raw_address.json')
+    .then(response => response.json())
+    .then(data => {
+        rawAddress=data
+        const uniqueProvinces = [...new Set(data.map(item => item.province))].sort((a, b) => a.localeCompare(b))
+        uniqueProvinces.forEach(province => {
+            const option = document.createElement("option")
+            option.value = province
+            option.innerText = province
+            provinceSelect.appendChild(option)
+        })
+    })
+    .catch(error => {
+        console.error('เกิดข้อผิดพลาด:', error);
+});
+
+//เพิ่มตัวเลือกอำเภอ เมื่อจังหวัดเปลี่ยน
+provinceSelect.addEventListener("change", function () {
+    const selectedProvince = this.value;
+    const amphoeSelect = document.getElementById("amphur")
+    const tumbolSelect = document.getElementById("tumbol")
+  
+    // เคลียร์อำเภอตำบลกับรหัสไปรษณีย์เดิมก่อน
+    amphoeSelect.innerHTML = '<option  value="" selected disabled>กรุณาเลือกอำเภอ</option>'
+    tumbolSelect.innerHTML = '<option  value="" selected disabled>กรุณาเลือกตำบล</option>'
+    document.getElementById("postalcode").value =''
+  
+    // ดึงอำเภอในจังหวัดนั้น แล้วลบที่ซ้ำกัน
+    const amphoes = [...new Set(
+        rawAddress
+        .filter(item => item.province === selectedProvince)
+        .map(item => item.amphoe)
+    )].sort((a, b) => a.localeCompare(b));
+  
+    amphoes.forEach(amphoe => {
+      const option = document.createElement("option")
+      option.value = amphoe
+      option.innerText = amphoe
+      amphoeSelect.appendChild(option)
+    });
+  });
+
+//เพิ่มตัวเลือกตำบล เมื่ออำเภอเปลี่ยน
+const amphoeSelect = document.getElementById("amphur")
+amphoeSelect.addEventListener("change", function () {
+    const selectedProvince = document.getElementById("province").value
+    const selectedAmphur = this.value
+    const tumbolSelect = document.getElementById("tumbol")
+  
+    // เคลียร์ตำบลกับรหัสไปรษณีย์เดิมก่อน
+    tumbolSelect.innerHTML = '<option  value="" selected disabled>กรุณาเลือกตำบล</option>'
+    document.getElementById("postalcode").value =''
+  
+    // ดึงตำบลในจังหวัดนั้น แล้วลบที่ซ้ำกัน
+    const tumbols = [...new Set(
+        rawAddress
+        .filter(item => item.province === selectedProvince && item.amphoe === selectedAmphur)
+        .map(item => item.district)
+    )].sort((a, b) => a.localeCompare(b))
+  
+    tumbols.forEach(amphoe => {
+      const option = document.createElement("option")
+      option.value = amphoe
+      option.innerText = amphoe
+      tumbolSelect.appendChild(option)
+    });
+  });
+
+//เพิ่มรหัสไปรษณีย์
+const tumbolSelect = document.getElementById("tumbol");
+tumbolSelect.addEventListener("change", function () {
+    const selectedProvince = document.getElementById("province").value;
+    const selectedAmphur = document.getElementById("amphur").value;
+    const selectedTumbol = this.value;
+    const selectedPostalcode = document.getElementById("postalcode");
+  
+    // เคลียร์รหัสไปรษณีย์เดิม
+    selectedPostalcode.value = '';
+
+    if(selectedTumbol !== ''){
+        const address =  rawAddress
+        .filter(item => item.province === selectedProvince && item.amphoe === selectedAmphur && item.district===selectedTumbol)
+        selectedPostalcode.value = address[0].zipcode
+    }
+
+});
 
 fetch('http://localhost:4004/api/info',
    {

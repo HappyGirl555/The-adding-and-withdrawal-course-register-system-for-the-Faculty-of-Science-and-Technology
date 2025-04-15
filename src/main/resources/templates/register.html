@@ -84,7 +84,7 @@
                                 <label for="moo">หมู่ที่ <span>*</span></label>
                             </th>
                             <th>
-                                <label for="tumbol">ตำบล <span>*</span></label>
+                                <label for="province">จังหวัด <span>*</span></label>
                             </th>
 
                         </tr>
@@ -96,7 +96,9 @@
                                 <input name="moo" id="moo" class="input_info" >
                             </td>
                             <td>
-                                <input name="tumbol" id="tumbol" class="input_info" ><br>
+                                <select name="province" id="province" class="input_info" >
+                                    <option value="" selected disabled>กรุณาเลือกจังหวัด</option>
+                                </select>
                             </td>
 
                         </tr>
@@ -105,7 +107,7 @@
                                 <label for="amphur">อำเภอ <span>*</span></label>
                             </th>
                             <th>
-                                <label for="province">จังหวัด <span>*</span></label>
+                                <label for="tumbol">ตำบล <span>*</span></label>
                             </th>
                             <th>
                                 <label for="postalcode">รหัสไปรษณีย์ <span>*</span></label>
@@ -114,10 +116,14 @@
                         </tr>
                         <tr>
                             <td>
-                                <input name="amphur" id="amphur" class="input_info" >
+                                <select name="amphur" id="amphur" class="input_info">
+                                    <option value="" selected disabled>กรุณาเลือกอำเภอ</option>
+                                </select>
                             </td>
                             <td>
-                                <input name="province" id="province" class="input_info" >
+                                <select name="tumbol" id="tumbol" class="input_info" >
+                                    <option value="" selected disabled>กรุณาเลือกตำบล</option>
+                                </select>
                             </td>
                             <td>
                                 <input name="postalcode" id="postalcode" class="input_info" >
