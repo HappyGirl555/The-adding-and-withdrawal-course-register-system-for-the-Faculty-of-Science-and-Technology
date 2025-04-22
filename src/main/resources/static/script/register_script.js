@@ -5,7 +5,7 @@ var prefix
 var firstname
 var lastname
 var studentYear
-var studentid 
+var studentid
 var department
 var advisor
 var address_number
@@ -131,7 +131,7 @@ fetch('http://localhost:4004/api/info',
            document.getElementById('studentid').textContent = student.studentid
            document.getElementById('department').textContent =  student.department
            document.getElementById('year').textContent =  68 - parseInt(student.studentid.slice(0,2))
-      })
+})
 
 
 const getDate = () =>{
@@ -252,7 +252,7 @@ function dropSubjectInputs() {
                  <input id="subject_teacher${len_div+1}" style="width:270px; height:30px; border: 0px; padding: 1px 5px 1px 5px;">
              </div>    
              <div style="text-align:left;">
-                 <p><strong>เหตุผลการเพิ่มรายวิชา </strong></p>
+                 <p><strong>เหตุผลการถอนรายวิชา </strong></p>
                  <input id="subject_cause${len_div+1}" style="width:100%; height:50px; border: 0px;padding: 1px 5px 1px 5px;">
              </div>
          </div>                  

@@ -21,7 +21,8 @@ profile.addEventListener("click", () =>{
 const currentPath = window.location.pathname;
 if (currentPath.startsWith("/")) {
     document.querySelector(".box").classList.add("show");
-} 
+}
+
 
 fetch('http://localhost:4004/api/info',
    {
